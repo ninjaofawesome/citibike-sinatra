@@ -1,0 +1,30 @@
+<h1>Map my route!</h1>
+<form action="/form" method="POST">
+
+<label for="POST-start">Start:</label>
+<select id="POST-start" name="start"> 
+	<% @data.each do |key| %>
+		<option value="start"><%= "#{key["name"]}" %></option>
+	<% end %>
+
+</select>
+
+<br />
+
+<label for="POST-end">End:</label>
+<select id="POST-end" name="end"> 
+
+<% @data.each do |key| %>
+	<option value="end"> <%= "#{key["name"]}" %></option>
+
+<% end %>		
+
+</select>
+
+<br />
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+

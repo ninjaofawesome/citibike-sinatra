@@ -1,2 +1,10 @@
 <h1>THE DATA</h1>
-<%= @data.inspect %>
+<% @data.each do |key| %>
+	<ul>
+		<li><%= "Station: #{key['name']}" %></li>
+			<ul>
+				<li><%= "Latitude: #{key['lat']}" %></li>
+				<li><%= "Longitude: #{key['lng']}" %></li>
+			</ul>
+	</ul>
+<% end %>

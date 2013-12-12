@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler'
 require "sinatra/reloader"
-
 Bundler.require
 
 Dir.glob('./lib/*.rb') do |model|
@@ -21,6 +20,30 @@ module Citibike
 
     get '/' do
       erb :home
+    end
+
+    get '/form' do
+
+      erb :form
+    end
+
+    post '/form' do
+      # erb params["start"]
+      # erb params["end"]
+      erb :results
+    end
+
+    get '/map' do
+    
+      @start = params["start"]
+      @end =  params["end"]
+
+      erb :map
+    end
+
+     post '/map' do
+
+      erb :map
     end
 
   end
